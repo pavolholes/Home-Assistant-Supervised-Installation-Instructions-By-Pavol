@@ -3,7 +3,7 @@
 ## Install Debian
 - Download Debian 11 x64 ISO: https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/
 - Use Etcher to flash ISO to USB thumb drive: https://www.balena.io/etcher/
-- Boot, install
+- Boot, install (I don't have any Desktop environment on my host OS, I use only CLI commands to manage it)
  
 ## Basic settings of Debian
 - Make your session root
