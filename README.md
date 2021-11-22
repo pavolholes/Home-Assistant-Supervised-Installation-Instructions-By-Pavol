@@ -1,4 +1,8 @@
 # Home Assistant Supervised Installation Instructions By Pavol
+I've collected below notes when I installed Home Assistant Supervised to my Dell OptiPlex 3050 with Intel CPU. I'm not trying to cover here any other platforms (like RPi).
+
+Because my installation is completed and working, below instructions may age-out so you'll need to update the steps which doesn't work. 
+Last update: November 2021
 
 ## Install Debian
 - Download Debian 11 x64 ISO: https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/
