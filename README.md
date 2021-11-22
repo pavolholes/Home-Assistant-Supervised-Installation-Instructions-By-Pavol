@@ -21,7 +21,10 @@
     ```
     nano /etc/apt/sources.list
     ```
-  - To lines ending at `main` add `contrib non-free`
+  - To lines ending at `main` add:
+    ```
+    ... contrib non-free
+    ```
   - At the end add two new lines:
     ```
     deb http://ftp.us.debian.org/debian/ testing main non-free contrib
