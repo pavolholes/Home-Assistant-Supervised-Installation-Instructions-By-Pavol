@@ -39,12 +39,12 @@
     update-initramfs –u
     reboot
     ```
-- Enable 'll' and 'l' alias to 'ls'
+- Enable `ll` and `l` aliases to `ls` command
   - Edit profile:
     ```
     nano ~/.bashrc
     ```
-  - Uncomment below lines and edit the `ll` and `l` command:
+  - Uncomment below lines and edit the `ll` and `l` commands as seen below:
     ```
     export LS_OPTIONS='--color=auto'
     eval "$(dircolors)"
