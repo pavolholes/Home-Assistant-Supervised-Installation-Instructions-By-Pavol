@@ -38,8 +38,8 @@ Last update: November 2021
   - Update firmware
     ```
     apt update
-    apt install  firmware-linux-nonfre
-    apt install  firmware-misc-nonfree
+    apt install firmware-linux-nonfree
+    apt install firmware-misc-nonfree
     update-initramfs –u
     reboot
     ```
