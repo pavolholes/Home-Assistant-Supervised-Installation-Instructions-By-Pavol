@@ -10,6 +10,18 @@ Last update: November 2021
 - Boot, install (I don't have any Desktop environment on my host OS, I use only CLI commands to manage it)
  
 ## Basic settings of Debian
+
+### Enable sudo for `<user>`
+  - login as `root` user and run below command to add `<userName>` to sudoers
+    ```
+    adduser <userName> sudo
+    ```
+  - logout from `root` user
+    ```
+    exit
+    ```
+  - login as `<user>`
+
 ### Make your session root
   ```
   sudo su -
@@ -76,15 +88,16 @@ Last update: November 2021
  
 ## Install Docker
   ```
-  apt-get install ca-certificates curl gnupg lsb-release
+  apt install ca-certificates curl gnupg lsb-release
   curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  apt-get install docker-ce docker-ce-cli containerd.io
+  apt update
+  apt install docker-ce docker-ce-cli containerd.io
   docker run hello-world
   docker login
   ```
  
-## Install Home Assistant prerequisites
+## Install Home Assistant Supervised prerequisites
 Check the latest instructions here: https://github.com/home-assistant/supervised-installer
   ```
   apt install jq wget curl udisks2 libglib2.0-bin network-manager dbus apparmor
@@ -110,13 +123,23 @@ Test the installation by:
   dpkg -i homeassistant-supervised.deb
   ```
 
+## Open Home Assistant
+  ```
+  http://<host-ip-address>:8123
+  ```
+
+## Home Assistant data folders location
+  ```
+  /usr/share/hassio
+  ```
+
 ## Install Portainer
 ### Create folder PortainerConfig in some convenient location so you can easily backup it
   ```
   cd ~
   mkdir DockerVolumes
   cd DockerVolumes
-  mkdir PortainerConfig    
+  mkdir PortainerConfig
   ```
 
 ### Install Portainer with a) self signed SSL certificate or b) with SSL certificate from Home Assistant
@@ -179,7 +202,7 @@ Connect to the Cockpit web console at port 9090:
     - Configure `samba` for use of `Samba/NFS plugin`
       - Edit samba configuration file
         ```
-        nano /ect/samba/smb.conf
+        nano /etc/samba/smb.conf
         ```
       - Under `[global]` add these lines:
         ```
