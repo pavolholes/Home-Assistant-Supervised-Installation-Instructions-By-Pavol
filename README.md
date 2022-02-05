@@ -148,14 +148,14 @@ Test the installation by:
   
   ```
   docker pull portainer/portainer-ce
-  docker run -d -p 9000:9000 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v ~/DockerVolumes/PortainerConfig:/data  portainer/portainer-ce
+  docker run -d -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v ~/DockerVolumes/PortainerConfig:/data  portainer/portainer-ce
   ```
 
   b) with SSL cert from Home Assistant:
   
   ```
   docker pull portainer/portainer-ce
-  docker run -d -p 9000:9000 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v ~/DockerVolumes/PortainerConfig:/data -v /usr/share/hassio/ssl:/certs:ro portainer/portainer-ce --sslcert /certs/fullchain.pem --sslkey /certs/privkey.pem
+  docker run -d -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v ~/DockerVolumes/PortainerConfig:/data -v /usr/share/hassio/ssl:/certs:ro portainer/portainer-ce --sslcert /certs/fullchain.pem --sslkey /certs/privkey.pem
   ```
 
 If you'll need to update the Portainer later you can run these commands (update the `run` command to one of above to use or not the SSL cert from Home Assistant)
