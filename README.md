@@ -190,8 +190,8 @@ Connect to the Cockpit web console at port 9090:
   - Add source for apt - mandatory for any plugin
     ```
     cd ~
-    wget -qO - http://images.45drives.com/repo/keys/aptpubkey.asc | apt-key add -
-    curl -o /etc/apt/sources.list.d/45drives.list http://images.45drives.com/repo/debian/45drives.list
+    curl -sSL https://repo.45drives.com/setup -o setup-repo.sh
+    bash setup-repo.sh
     apt update
     ```
     
